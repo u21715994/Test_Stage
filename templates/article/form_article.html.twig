@@ -1,0 +1,11 @@
+<html>
+    <head></head>
+    <body>
+        {{ form_start(articleForm, {'attr': {'novalidate': 'novalidate'}}) }}
+            {{ form_row(articleForm.title) }}
+            {{ form_row(articleForm.content) }}
+            {{ form_row(articleForm.cover) }}
+            <button type="submit" class="btn btn-primary">Créer</button>
+        {{ form_end(articleForm) }}
+    </body>
+</html>

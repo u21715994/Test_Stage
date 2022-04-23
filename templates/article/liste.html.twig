@@ -1,0 +1,27 @@
+<html>
+    <head></head>
+    <body>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Titre</th>
+                <th>Contenu</th>
+                <th>Couverture</th>
+                <th>Date de Création</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+        {% for article in articles %} 
+            <tr>
+                <th>{{article.id}}</th>
+                <th>{{article.title}}</th>
+                <th>{{article.content}}</th>
+                <th>{{article.cover}}</th>
+                <th>{{article.date.format("d-m-Y")}}</th>
+                <th><a href="{{path('editArticle',{'id':article.id})}}">Modifier</a></th>
+                <th><a href="{{path('deleteArticle',{'id':article.id})}}">Supprimer</a></th>
+            </tr>
+        {% endfor %}
+        </table>
+    </body>
+</html>
